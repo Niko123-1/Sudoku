@@ -24,7 +24,6 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Судоку")
 
 # Параметры сложности (сколько клеток оставить видимыми)
-DIFFICULTY = 0.6  # От 0.1 (очень сложно) до 0.8 (легко)
 
 # Игровое поле и исходное (неизменяемое) поле
 board = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
@@ -258,7 +257,6 @@ while running:
 
     # Проверка на победу
     if all(all(cell != 0 for cell in row) for row in board) and is_valid_sudoku(board):
-        font = pygame.font.SysFont('Arial', 200)
         text = font.render("Победа!", True, RED)
         screen.blit(text, (WIDTH // 2 - 70, HEIGHT // 2 - 20))
 
